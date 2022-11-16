@@ -1,8 +1,16 @@
 <?php
     require "Public/Layouts/Header.php";
+    $Busca = $_REQUEST['Buscar'];
+    $nombrec = $v['IdAprendiz'];       
+    $conexion = mysqli_connect('localhost','root','','borradorproyecto') or die (mysqli_error());
+    $consulta = "SELECT * FROM aprendiz WHERE id=".$nombrec;
+    $ejecutar = mysqli_query($conexion,$consulta)or die(mysqli_error($conexion));
+    foreach ($ejecutar as $opciones) {
+    $Documento = $opciones['Documento'];
+    }
     ?>
         <h1>Asistencia</h1>
-        <p>Para descargar el informe deslice hasta el final de la tabla.</p>
+        <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
         <br>
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
@@ -19,9 +27,13 @@
                     if (!empty($dato)) {
                         foreach ($dato as $key => $value) {
                             foreach ($value as $v) {
-                ?>
+
+                            
+                        
+                ?>  
                 <tr>
-                    <?php $estado = $v['Estado'] ;
+                    <?php 
+                    $estado = $v['Estado'] ;
                     if ($estado == 'Activo') {
                     ?>
                         <td><?php echo $v['id'] ?></td>
@@ -36,15 +48,9 @@
                             ?> 
                         </td>
                         <td><?php 
-                                $nombrec = $v['IdAprendiz'];       
-                                $conexion = mysqli_connect('localhost','root','','borradorproyecto') or die (mysqli_error());
-                                $consulta = "SELECT * FROM aprendiz WHERE id=".$nombrec;
-                                $ejecutar = mysqli_query($conexion,$consulta)or die(mysqli_error($conexion));
-                                foreach ($ejecutar as $opciones) {
                                 echo $opciones['Nombres'];
                                 echo "  ";
                                 echo $opciones['Apellidos'];
-                                }
                             ?> 
                         </td>
                         <td><?php 
@@ -64,7 +70,7 @@
                         <td><a href="<?php urlsite ?>?page=Uasistencia&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i> Editar</a></td>
                         <td><a href="<?php urlsite ?>?page=Dasistencia&id=<?php echo $v['id'] ?>&IdFecha=<?php echo $v['IdFecha'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Borrar</a></td>
                     <?php                    
-                    }
+                        }
                     ?>  
                     </td>
                 </tr>
@@ -75,8 +81,7 @@
                 ?>
             </tbody>
         </table>
-        <a href="<?php urlsite ?>?page=Rasistenciaexcel&IdFecha=<?php echo $v['IdFecha']?>" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Descargar Informe excel</a>
-        <a href="<?php urlsite ?>?page=Rasistenciapdf&IdFecha=<?php echo $v['IdFecha']?>" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Descargar Informe PDF</a>
+
     <?php
     require "Public/Layouts/Footer.php";
 ?>  

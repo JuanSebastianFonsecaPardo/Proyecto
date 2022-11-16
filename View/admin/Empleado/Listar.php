@@ -3,6 +3,11 @@
     echo "<br><a class='btn btn-success' href='".urlsite."?page=Cempleado'><i class='fa-solid fa-plus'></i> Crear empleado</a><br><br><a class='btn' href='".urlsite."?page=Pempleado'><i class='fa-solid fa-trash-can'></i> Papelera Empleado</a><br><br>";
     ?>
         <h1>Empleados</h1>
+        <form action="" method="GET">
+            <input type="number" name="busqueda">
+            <input type="submit" class="btn btn-primary" value="Buscar">
+            <input type="hidden" name="m" value="Buscar">
+        </form><br>
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
@@ -36,7 +41,7 @@
                         <td><?php echo $v['Email'] ?></td>
                         <td><?php echo $v['Telefono'] ?></td>
                         <td><a href="<?php urlsite ?>?page=Uempleado&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
-                        <td><a href="<?php urlsite ?>?page=Iempleado&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Borrar</a></td>
+                        <td><a href="<?php urlsite ?>?page=Iempleado&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td>
                     <?php                    
                     }
                     ?>  

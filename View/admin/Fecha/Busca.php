@@ -11,7 +11,6 @@
         </form>
 
         <br><br>
-    
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
@@ -30,6 +29,11 @@
                             foreach ($value as $v) {
                 ?>
                 <tr>
+                <?php
+                    $Busca = $_REQUEST['Buscar'];
+                    $Fecha = $v['Fecha'];
+                    if ($Fecha == $Busca) {
+                ?>
                         <td><?php echo $v['id'] ?></td>
                         <td><?php echo $v['Nombre']?></td>
                         <td><?php echo $v['Fecha'] ?></td>
@@ -54,7 +58,7 @@
                     </td>
                 </tr>
                 <?php
-                            
+                    }       
                         }
                     }
                 ?>

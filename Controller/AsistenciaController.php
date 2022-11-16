@@ -30,7 +30,7 @@
             $Estado = $_REQUEST['Estado'];
             $data = "'$Fecha','$Aprendiz','$Asistencia','$Estado'";
             $Asistencia = New Asistencia();
-            $dato = $Asistencia->Create("asistencia",$data);
+            $dato = $Asistencia->Create("asistencia",$data,$Aprendiz,$Fecha,$Categoria);
             header('location:'.urlsite."?page=Casistencia&IdCategoria=".$Categoria."&Fecha=".$Fecha."");
         }
         //Editar
@@ -95,6 +95,35 @@
             $Asistencia = New Asistencia();
             $dato = $Asistencia->Read("asistencia","IdFecha=".$id);
             require "View/Admin/Asistencia/Descargar.php";
+        }
+        //Consultar
+        static function consultar(){
+            $Asistencia = New Asistencia();
+            $dato = $Asistencia->Consul("asistencia","1");
+            require "View/Admin/Asistencia/Consulta.php";
+        }
+
+        //Buscar
+        static function Colsultar(){
+            $Asistencia = New Asistencia();
+            $dato = $Asistencia->Read("asistencia","1");
+            require "View/Admin/Asistencia/Consultar.php";
+        }
+        //Buscado
+        static function BuscarA(){
+            $buscar = $_REQUEST['busqueda'];
+            if ($buscar == "") {
+                header('location:'.urlsite."?page=Consultar");
+            }
+            else {
+                header('location:'.urlsite."?page=Basistencia&Buscar=".$buscar);
+            }
+        }
+        //Buscado
+        static function Buscado(){
+            $Empleados = New Asistencia();
+            $dato = $Empleados-> Busca("asistencia","1");
+            require "View/Admin/Asistencia/Buscar.php";
         }
     }
 ?>

@@ -9,13 +9,19 @@
         }
         //CRUD
 
-        public function Create($tabla, $data){
-            $consulta = "INSERT INTO ".$tabla." VALUES(NULL,".$data.")";
-            $resultado = $this ->db->query($consulta);
-            if ($resultado) {
-                return true;
-            }else {
-                return false;
+        public function Create($tabla, $data, $nombre,$date,$categoria){
+            //Campos vacios
+            if (empty($nombre && $date && $categoria && $categoria)) {
+                header('location:'.urlsite."?page=Rfecha");
+            }
+            else{
+                $consulta = "INSERT INTO ".$tabla." VALUES(NULL,".$data.")";
+                $resultado = $this ->db->query($consulta);
+                if ($resultado) {
+                    return true;
+                }else {
+                    return false;
+                }
             }
         }
 

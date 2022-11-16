@@ -76,5 +76,21 @@
             $dato = $Categoria->Delete("categoria","id=".$id);
             header('location:'.urlsite."?page=Pcategoria");
         }
+        //Buscar
+        static function Buscar(){
+            $buscar = $_REQUEST['busqueda'];
+            if ($buscar == "") {
+                header('location:'.urlsite."?page=Rcategoria");
+            }
+            else {
+                header('location:'.urlsite."?page=Bcategoria&Buscar=".$buscar);
+            }
+        }
+        //Buscado
+        static function Buscado(){
+            $Empleados = New Aprendiz();
+            $dato = $Empleados-> Consultar("categoria","1");
+            require "View/admin/Categoria/Consulta.php";
+        }
     }
 ?>

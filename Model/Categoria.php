@@ -11,9 +11,9 @@
 
         public function Create($tabla,$Nombre,$Descripcion,$data){
         //Campos vacios 
-            if(empty($Nombre)){
-                echo "<script>window.alert('Por favor rellene todos los campos');</script>
-                <h1 class='alert alert-danger' role='alert'> <a href='".urlsite."?page=Ccategoria'>Volver</a></h1>";
+            //Campos vacios
+            if (empty($Documento && $Nombre && $Apellido && $Email && $Telefono)) {
+                header('location:'.urlsite."?page=Rcategoria");
             }
             else { 
                 $consulta = "INSERT INTO ".$tabla." VALUES(NULL,".$data.")";

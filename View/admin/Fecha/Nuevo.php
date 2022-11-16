@@ -1,14 +1,15 @@
 <?php
     require "Public/Layouts/Header.php";
 ?>  
-<h1>Crear Fecha </h1>
-<form action="" method="GET">
+<form action="" method="GET" class="container-form">
+    <div class="contenedor-formularios-nuevos">
+    <h1>CREAR UN EVENTO </h1>
     <label for="">Nombre</label><br>
-    <input type="text" name="Nombre"><br>
+    <input type="text" name="Nombre" class="campo"><br>
     <label for="">Fecha</label><br>
-    <input type="date" name="Fecha"><br>
+    <input type="date" name="Fecha" class="campo"><br>
     <label for="">Categoria</label><br>
-    <select name="Categoria">
+    <select name="Categoria" class="campo">
         <?php
             include 'Config/Conexion.php';
             $consulta = "SELECT * FROM  categoria";
@@ -20,9 +21,10 @@
             }
         ?>
     </select><br>    
-    <input type="submit" class="btn btn-success" name="n" value="Crear">
+    <input type="submit" class="btn-enviar" name="n" value="Crear"> 
     <input type="hidden" name="f" value="guardar">
+    </div>
 </form>
 <?php
     require "Public/Layouts/Footer.php";
-?>  
+?>   

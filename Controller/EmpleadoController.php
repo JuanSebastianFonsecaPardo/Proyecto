@@ -145,5 +145,21 @@
         static function Contacto(){
             require "View/contacto.php";
         }
+        //Buscar
+        static function Buscar(){
+            $buscar = $_REQUEST['busqueda'];
+            if ($buscar == "") {
+                header('location:'.urlsite."?page=Rempleado");
+            }
+            else {
+                header('location:'.urlsite."?page=Bempleado&Buscar=".$buscar);
+            }
+        }
+        //Buscado
+        static function Buscado(){
+            $Empleados = New Empleado();
+            $dato = $Empleados-> Read("empleado","1");
+            require "View/Admin/Empleado/Busca.php";
+        }
     }
 ?>

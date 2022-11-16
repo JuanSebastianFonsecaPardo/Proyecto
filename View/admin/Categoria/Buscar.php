@@ -25,8 +25,12 @@
                             foreach ($value as $v) {
                 ?>
                 <tr>
-                    <?php $estado = $v['Estado'] ;
-                    if ($estado == 'Activo') {
+                    <?php 
+                    $Busca = $_REQUEST['Buscar'];
+                    $Nombre = $v['Nombre'];
+                    $estado = $v['Estado'] ;
+                    if ($Nombre == $Busca) {
+                        if ($estado == 'Activo') {
                     ?>
                         <td><?php echo $v['id'] ?></td>
                         <td><?php echo $v['Nombre'] ?></td>
@@ -44,6 +48,7 @@
                         <td><a href="<?php urlsite ?>?page=Ucategoria&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
                         <td><a href="<?php urlsite ?>?page=Icategoria&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td>
                     <?php                    
+                        }
                     }
                     ?>  
                     </td>

@@ -30,8 +30,12 @@
                             foreach ($value as $v) {
                 ?>
                 <tr>
-                    <?php $estado = $v['Estado'] ;
-                    if ($estado == 'Activo') {
+                    <?php 
+                    $Busca = $_REQUEST['Buscar'];
+                    $Documento = $v['Documento'];
+                    $estado = $v['Estado'] ;
+                    if ($Documento == $Busca) {
+                        if ($estado == 'Activo') {
                     ?>
                         <td><?php echo $v['id'] ?></td>
                         <td><?php echo $v['Documento'] ?></td>
@@ -51,11 +55,11 @@
                             ?> 
                         </td>
                         <td><a href="<?php urlsite ?>?page=Uaprendiz&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
-                        <td><a href="<?php urlsite ?>?page=Iaprendiz&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td>
+                        <td><a href="<?php urlsite ?>?page=Iaprendiz&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td> 
                     <?php                    
+                        }
                     }
-                    ?>  
-                    </td>
+                    ?> 
                 </tr>
                 <?php
                             }

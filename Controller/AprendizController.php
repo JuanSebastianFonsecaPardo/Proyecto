@@ -84,5 +84,21 @@
             $dato = $Aprendiz->Delete("aprendiz","id=".$id);
             header('location:'.urlsite."?page=Paprendiz");
         }
+        //Buscar
+        static function Buscar(){
+            $buscar = $_REQUEST['busqueda'];
+            if ($buscar == "") {
+                header('location:'.urlsite."?page=Raprendiz");
+            }
+            else {
+                header('location:'.urlsite."?page=Baprendiz&Buscar=".$buscar);
+            }
+        }
+        //Buscado
+        static function Buscado(){
+            $Empleados = New Aprendiz();
+            $dato = $Empleados-> Read("aprendiz","1");
+            require "View/admin/Aprendiz/Buscar.php";
+        }
     }
 ?>

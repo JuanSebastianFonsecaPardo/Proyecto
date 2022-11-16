@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css">
+    <link rel='icon' href='Resources/Img/favicon.ico' type='image/png'/>
 </head>
 <body>
     <!-- =============== Navigation ================ -->
@@ -101,6 +102,18 @@
                 <li>
                     <?php
                         echo "
+                            <a href='".urlsite."?page=Colsultar'>
+                                <span class='icon'>
+                                <i class='fa-solid fa-user-graduate'></i>
+                                </span>
+                                <span class='title'>Asistencia</span>
+                            </a>
+                        ";
+                    ?>
+                </li>
+                <li>
+                    <?php
+                        echo "
                             <a href='".urlsite."?page=CClave'>
                                 <span class='icon'>
                                 <ion-icon name='construct-outline'></ion-icon>
@@ -128,8 +141,5 @@
         <div class="topbar">
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
-            </div>
-            <div class="user">
-                <img src="Resources/img/customer01.jpg" alt="">
             </div>
         </div>

@@ -13,8 +13,7 @@
         public function Create($tabla,$Documento,$Nombre,$Apellido,$Email,$Telefono,$data){
             //Campos vacios
             if (empty($Documento && $Nombre && $Apellido && $Email && $Telefono)) {
-                echo "<script>window.alert('Por favor rellene todos los campos');</script>
-                <h1 class='alert alert-danger' role='alert'> <a href='".urlsite."?page=Cempleado'>Volver</a></h1>";
+                header('location:'.urlsite."?page=Rempleado");
             }
             else{
                 //Duplicidad

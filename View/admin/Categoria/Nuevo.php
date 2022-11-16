@@ -1,14 +1,15 @@
 <?php
     require "Public/Layouts/Header.php";
 ?>  
-<h1>Crear Categoria </h1>
-<form action="" method="GET">
+<form action="" method="GET" class="container-form">
+<div class="contenedor-formularios-nuevos">
+    <h1>CREAR CATEGORIA </h1>
     <label for="">Nombre</label><br>
-    <input type="text" name="Nombre" placeholder="Nombres"><br>
+    <input type="text" name="Nombre" placeholder="Nombres" class="campo"><br>
     <label for="">Descripcion</label><br>
-    <input type="text" name="Descripcion" placeholder="Descripcion"><br>
+    <input type="text" name="Descripcion" placeholder="Descripcion" class="campo"><br>
     <label for="">Empleado encargado</label><br>
-    <select name="Empleado">
+    <select name="Empleado" class="campo">
         <?php
             include 'Config/Conexion.php';
             $consulta = "SELECT * FROM  empleado";
@@ -21,8 +22,9 @@
         ?>
     </select><br><br>
     <input type="hidden" name="Estado" value="Activo">
-    <input type="submit" class="btn btn-success" name="n" value="Crear">
+    <input type="submit" class="btn-enviar" name="n" value="Crear">
     <input type="hidden" name="c" value="guardar">
+</div>
 </form>
 <?php
     require "Public/Layouts/Footer.php";

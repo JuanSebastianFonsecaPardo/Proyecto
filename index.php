@@ -74,6 +74,14 @@
         case 'Dempleado':
             EmpleadoController::eliminar();
             break;
+        case 'Bempleado':
+            EmpleadoController::buscado();
+            break;
+        case 'LCerrar':
+            EmpleadoController::cerrar();
+            break;
+        //Fin empleado
+        //Inicio aprendiz
         case 'Caprendiz': 
             AprendizController::nuevo();
             break;
@@ -95,6 +103,10 @@
         case 'Daprendiz':
             AprendizController::eliminar();
             break;
+        case 'Baprendiz':
+            AprendizController::buscado();
+            break;
+        /* INICIO CATEGORIA */
         case 'Ccategoria': 
             CategoriaController::nuevo();
             break;
@@ -116,6 +128,11 @@
         case 'Dcategoria':
             CategoriaController::eliminar();
             break;
+        case 'Bcategoria':
+            CategoriaController::buscado();
+            break;
+        /* FIN CATEGORIA */
+        /* INICIO ASISTENCIA */
         case 'Casistencia': 
             AsistenciaController::nuevo();
             break;
@@ -137,10 +154,24 @@
         case 'Dasistencia':
             AsistenciaController::eliminar();
             break;
-        case 'LCerrar': 
-            EmpleadoController::cerrar();
+        case 'Colsultar':
+            AsistenciaController::consultar();
             break;
-         case 'Cfecha': 
+        case 'BuscarA':
+            AsistenciaController::BConsul();
+            break;
+        case 'Basistencia':
+            AsistenciaController::buscado();
+            break;
+        case 'Gasistencia':
+            AsistenciaController::guardar();
+            break;
+        case 'Rasistenciaexcel':
+            AsistenciaController::descargar();
+            break;
+        /* FIN ASISTENCIA */
+        /* INICIO FECHA  */ 
+        case 'Cfecha':
             FechaController::nuevo();
             break;
         case 'Rfecha':
@@ -152,15 +183,14 @@
         case 'Dfecha':
             FechaController::eliminar();
             break;
+        case 'Bfecha':
+            FechaController::buscado();
+            break;
         case 'Buscar':
             AsistenciaController::Buscar();
             break;
-        case 'Gasistencia':
-            AsistenciaController::guardar();
-            break;
-        case 'Rasistenciaexcel':
-            AsistenciaController::descargar();
-            break;
+        /* FIN FECHA */
+    
         default :echo "
             <!DOCTYPE html>
             <html lang='en'>
