@@ -43,6 +43,7 @@
         //Actualizar
         static function actualizar(){
             $id = $_REQUEST['id'];
+            $Buscar = $_REQUEST['Buscar'];
             $IdFecha = $_REQUEST['Fecha'];
             $IdAprendiz = $_GET['idaprendiz'];
             $Asistencia = $_REQUEST['checkbox'];
@@ -50,7 +51,7 @@
             $data = "IdFecha='$IdFecha',IdAprendiz='$IdAprendiz',Asistencia='$Asistencia',Estado='$Estado'";
             $Categoria = New Categoria();
             $dato = $Categoria->Update("asistencia",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rasistencia");
+            header('location:'.urlsite."?page=Colsultar");
         }
         //Editar estado inactivo
         static function inactivo(){
@@ -124,6 +125,14 @@
             $Empleados = New Asistencia();
             $dato = $Empleados-> Busca("asistencia","1");
             require "View/Admin/Asistencia/Buscar.php";
+        }
+        
+        //Descargar excel de un aprendiz
+        static function descargarA(){
+            $Busca = $_REQUEST['Buscar'];
+            $Asistencia = New Asistencia();
+            $dato = $Asistencia->Busca("asistencia","IdAprendiz=".$Busca);
+            require "View/Admin/Asistencia/DescargarA.php";
         }
     }
 ?>

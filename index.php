@@ -169,6 +169,9 @@
         case 'Rasistenciaexcel':
             AsistenciaController::descargar();
             break;
+        case 'ARasistenciaexcel':
+            AsistenciaController::descargarA();
+            break;
         /* FIN ASISTENCIA */
         /* INICIO FECHA  */ 
         case 'Cfecha':

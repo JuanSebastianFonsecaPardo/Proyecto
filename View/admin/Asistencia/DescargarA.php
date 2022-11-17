@@ -1,8 +1,6 @@
 <?php
-    require "Public/Layouts/Header.php";
-    $Busca = $_REQUEST['Buscar'];
 ?>
-        <h1>Asistencia</h1>
+<h1>Asistencia</h1>
         <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
         <br>
         <table class="table table-striped table-bordered">
@@ -84,7 +82,6 @@
             ?> 
             </tbody>
         </table>
-        <a href="<?php urlsite ?>?page=ARasistenciaexcel&Buscar=<?php echo $Busca?>" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Descargar Informe excel</a>
 <?php
     require "Public/Layouts/Footer.php";
 ?>  

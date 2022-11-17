@@ -9,11 +9,6 @@
         }
         //CRUD
         public function Create($tabla, $data, $Aprendiz, $Fecha, $Categoria){
-            //Campos vacios
-            if (empty($Documento && $Nombre && $Apellido && $Email && $Telefono)) {
-                header('location:'.urlsite."?page=Rasistencia");
-            }
-            else{
                 //Duplicidad
                 $consultaD = "SELECT * FROM ".$tabla." WHERE IdFecha=".$Fecha." AND IdAprendiz=".$Aprendiz;
                 $conexionD = mysqli_connect("localhost","root","","borradorproyecto");
@@ -29,7 +24,6 @@
                     else {
                         return false;
                     }   
-                }
             }
         }
 
@@ -90,5 +84,6 @@
             }
             return $this->datos;
         }
+        
     }
 ?>

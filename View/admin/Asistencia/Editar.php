@@ -43,7 +43,7 @@
     </select>
     <input type="hidden" value="Activo" name="Estado">
     <input type="hidden" value="<?php echo $v['id'] ?>" name="id">
-    <input type="submit" class="btn btn-success" name="n" value="Editar">
+    <input type="submit" class="btn-enviar" name="n" value="Editar">
     <input type="hidden" name="s" value="actualizar">
     <?php
      }}}}
