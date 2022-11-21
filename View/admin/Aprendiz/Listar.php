@@ -1,8 +1,19 @@
 <?php
-
     require "Public/Layouts/Header.php";
-    echo "<br><a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a><br><br><a class='btn' href='".urlsite."?page=Paprendiz'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
-    ?>
+    echo "<br><a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a><a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
+     //Cantidad de registros por pagina
+     $Registros_x_pagina = 5;
+     //Contar lista de registro
+     $con = Conectar();
+     $count = current($con->query("SELECT COUNT(id) FROM aprendiz")->fetch());
+     //Paginas totales
+     $Paginas = $count/$Registros_x_pagina;
+     //Redondear el numero de paginas en case que de x.3
+     $Paginas = ceil($Paginas);
+     //Imprimir el numero de paginas
+     // echo $Paginas
+ 
+?>
         <h1>Aprendiz</h1>
         <form action="" method="GET">
             <input type="number" name="busqueda">
@@ -50,8 +61,8 @@
                                 }
                             ?> 
                         </td>
-                        <td><a href="<?php urlsite ?>?page=Uaprendiz&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
-                        <td><a href="<?php urlsite ?>?page=Iaprendiz&id=<?php echo $v['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td>
+                        <td><a href="<?php urlsite ?>?page=Uaprendiz&id=<?php echo $v['id'] ?>&Pagina=0" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
+                        <td><a href="#" class="btn btn-danger" onclick="inactivar('<?php echo $v['id'] ?>')" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Inactivar</a></td>
                     <?php                    
                     }
                     ?>  
@@ -64,6 +75,45 @@
                 ?>
             </tbody>
         </table>
+
+    <!-- PAGINACION -->
+
+    <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item
+                <?php echo $_GET['Pagina']<=$Paginas-1 ? 'disabled' : '' ?>"">
+                    <a href="<?php echo urlsite.'?page=Raprendiz&Pagina='.$_GET['Pagina']-1 ?>"  class="page-link">Anterior</a>
+                </li>
+                <?php for($i=0; $i<$Paginas;$i++){ ?>
+                <li class="page-item 
+                <?php echo $_GET['Pagina']== $i ? 'active' : '' ?>">
+                    <a href="<?php urlsite?>?page=Raprendiz&Pagina=<?php echo $i ?>" class="page-link"><?php echo $i ?></a>
+                </li>
+                <?php } ?>
+                <li class="page-item
+                <?php echo $_GET['Pagina']>=$Paginas-1 ? 'disabled' : '' ?>">
+                    <a href="<?php echo urlsite.'?page=Raprendiz&Pagina='.$_GET['Pagina']+1 ?>" class="page-link">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+
+    <!-- Alertas -->
+
+        <!-- INACTIVAR -->
+        <script type="text/javascript">
+            function inactivar(id){
+                alertify.confirm('PIVOOT',"Desea inactivar el aprendiz?",
+                function(){
+                    alertify.alert('PIVOOT',"Si desea activar el aprendiz otra vez tendra que ir a la papelera.", function(){
+                        window.location = "<?php urlsite?>?page=Iaprendiz&id="+id;
+                    });
+                    alertify.success('Inactivado Correctamente');
+                },
+                function(){
+                    alertify.error('Cancelado');
+                });
+            }
+        </script>
     <?php
     require "Public/Layouts/Footer.php";
 ?>  

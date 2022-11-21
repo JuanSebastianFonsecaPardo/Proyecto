@@ -13,7 +13,7 @@
         public function Create($tabla,$Documento,$Nombre,$Apellido,$Email,$Telefono,$data){
             //Campos vacios
             if (empty($Documento && $Nombre && $Apellido && $Email && $Telefono)) {
-                header('location:'.urlsite."?page=Rempleado");
+                header('location:'.urlsite."?page=Rempleado&Pagina=0");
             }
             else{
                 //Duplicidad
@@ -40,7 +40,11 @@
         }
         //Leer
         public function Read($tabla, $condicion){
-            $consulta = "SELECT * FROM ".$tabla." WHERE ".$condicion.";";
+             //Cantidad de registros por pagina
+            $Registros_x_pagina = 5;
+            //Limitar articulos por pagina
+            $iniciar = ($_GET['Pagina'])*$Registros_x_pagina;
+            $consulta = 'SELECT * FROM '.$tabla.' Limit '.$iniciar.',5';
             $resultado = $this->db->query($consulta);
             while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
                 $this->datos[]= $filas;
@@ -98,6 +102,17 @@
             else {
                 return false;
             }
+        }
+
+        //Editar
+
+        public function editarread($tabla, $condicion){
+            $consulta = "SELECT * FROM ".$tabla." WHERE ".$condicion;
+            $resultado = $this->db->query($consulta);
+            while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
+                $this->datos[]= $filas;
+            }
+            return $this->datos;
         }
     }
 ?>

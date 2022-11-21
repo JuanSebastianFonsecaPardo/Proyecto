@@ -26,13 +26,17 @@
         }
 
         public function Read($tabla, $condicion){
-            $consulta = "SELECT * FROM ".$tabla." WHERE ".$condicion.";";
-            $resultado = $this->db->query($consulta);
-            while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
-                $this->datos[]= $filas;
-            }
-            return $this->datos;
-        }
+            //Cantidad de registros por pagina
+           $Registros_x_pagina = 5;
+           //Limitar articulos por pagina
+           $iniciar = ($_GET['Pagina'])*$Registros_x_pagina;
+           $consulta = 'SELECT * FROM '.$tabla.' Limit '.$iniciar.',5';
+           $resultado = $this->db->query($consulta);
+           while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
+               $this->datos[]= $filas;
+           }
+           return $this->datos;
+       }
 
         public function Update($tabla, $data, $condicion){
             $consulta = "UPDATE ".$tabla." SET ".$data." WHERE ".$condicion;
@@ -54,6 +58,17 @@
             else {
                 return false;
             }
+        }
+
+         //Editar
+
+         public function editarread($tabla, $condicion){
+            $consulta = "SELECT * FROM ".$tabla." WHERE ".$condicion;
+            $resultado = $this->db->query($consulta);
+            while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
+                $this->datos[]= $filas;
+            }
+            return $this->datos;
         }
     }
 ?>

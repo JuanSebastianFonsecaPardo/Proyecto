@@ -1,5 +1,6 @@
 <?php
     require "Public/Layouts/Header.php";
+    $Categoria = $_REQUEST['IdCategoria'];
     ?>
         <h1>Asistencia</h1>
         <p>Para descargar el informe deslice hasta el final de la tabla.</p>
@@ -76,7 +77,7 @@
             </tbody>
         </table>
         <a href="<?php urlsite ?>?page=Rasistenciaexcel&IdFecha=<?php echo $v['IdFecha']?>" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Descargar Informe excel</a>
-        <a href="<?php urlsite ?>?page=Rasistenciapdf&IdFecha=<?php echo $v['IdFecha']?>" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Descargar Informe PDF</a>
+        <a href="<?php urlsite ?>?page=Rasistenciapdf&IdFecha=<?php echo $v['IdFecha']?>&IdCategoria=<?php echo $Categoria ?>" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Descargar Informe PDF</a>
     <?php
     require "Public/Layouts/Footer.php";
 ?>  

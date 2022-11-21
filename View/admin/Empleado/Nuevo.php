@@ -33,6 +33,7 @@
     <input type="hidden" name="m" value="guardar">
 </div>
 </form>
+
 <?php
     require "Public/Layouts/Footer.php";
 ?>  

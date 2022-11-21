@@ -80,6 +80,9 @@
         case 'LCerrar':
             EmpleadoController::cerrar();
             break;
+        case 'CargaMasivaEmpleado':
+            EmpleadoController::CargaM();
+            break;
         //Fin empleado
         //Inicio aprendiz
         case 'Caprendiz': 
@@ -171,6 +174,12 @@
             break;
         case 'ARasistenciaexcel':
             AsistenciaController::descargarA();
+            break;
+        case 'Rasistenciapdf':
+            AsistenciaController::descargarpdft();
+            break;
+        case 'ARasistenciapdf':
+            AsistenciaController::descargarpdf();
             break;
         /* FIN ASISTENCIA */
         /* INICIO FECHA  */ 

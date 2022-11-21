@@ -1,6 +1,6 @@
 <?php
     require "Public/Layouts/Header.php";
-    echo "<br><a class='btn btn-success' href='".urlsite."?page=Ccategoria'><i class='fa-solid fa-plus'></i> Crear Categoria</a><br><br><a class='btn' href='".urlsite."?page=Pcategoria'><i class='fa-solid fa-trash-can'></i> Papelera Categoria</a><br><br>";
+    echo "<br><a class='btn btn-success' href='".urlsite."?page=Ccategoria'><i class='fa-solid fa-plus'></i> Crear Categoria</a><a class='btn' href='".urlsite."?page=Pcategoria&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Categoria</a><br><br>";
     ?>
         <h1>Categoria</h1>
         <form action="" method="GET">

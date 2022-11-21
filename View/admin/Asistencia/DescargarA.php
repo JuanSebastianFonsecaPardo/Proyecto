@@ -1,16 +1,16 @@
 <?php
+    header("Content-Type application/xls");
+    header("Content-Disposition: attachment; filename= InformeAprendiz.xls");
 ?>
-<h1>Asistencia</h1>
+        <h1>Asistencia</h1>
         <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
-        <br>
-        <table class="table table-striped table-bordered">
+        <br> <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Aprendiz</th>
                 <th scope="col">Asistencia</th>
-                <th scope="col" colspan="2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,18 +59,16 @@
                                 $valor = $v['Asistencia'];
                                 if ($valor == 'Asistio') {
                                     ?>
-                                        <p class="btn btn-success"><i class="fa-solid fa-circle-check"></i></p>
+                                        <p class="btn btn-success"><i class="fa-solid fa-circle-check"></i>Asistio</p>
                                     <?php
                                 }
                                 if ($valor == 'Falto') {
                                     ?>
-                                        <p class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></p>
+                                        <p class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>Falto</p>
                                     <?php
                                 }
                                 ?>
                             </td>
-                            <td><a href="<?php urlsite ?>?page=Uasistencia&Buscar=<?php echo $Busca ?>&id=<?php echo $v['id'] ?>" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i> Editar</a></td>
-                        <td><a href="<?php urlsite ?>?page=Dasistencia&id=<?php echo $v['id'] ?>&IdFecha=<?php echo $v['IdFecha'] ?>" class="btn btn-danger"><i class="fa-solid fa-biohazard"></i> Borrar</a></td>
                         </tr>
             <?php
                     }
@@ -82,6 +80,4 @@
             ?> 
             </tbody>
         </table>
-<?php
-    require "Public/Layouts/Footer.php";
-?>  
+        

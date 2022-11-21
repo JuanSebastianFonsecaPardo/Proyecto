@@ -6,6 +6,25 @@
         header('location:'.urlsite."?page=Login");
         die();
     }
+
+    //Conexion
+
+    function Conectar(){
+        $conn = null;
+        $host = "localhost";
+        $db = "borradorproyecto";
+        $user = "root";
+        $pwd = "";
+        try {
+            $conn = new PDO('mysql:host='.$host.';dbname='.$db,$user,$pwd);
+        } catch (PDOException $e) {
+            echo ':(Error al conectar con la base de datos)'.$e;
+            exit;
+        }
+        return $conn;
+    }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +39,14 @@
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css">
+    <!-- Paginador -->
+    <link rel="stylesheet" href="Assets/Paginador/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="Assets/Paginador/css/bootstrap.css">
+    <link rel="stylesheet" href="Assets/Paginador/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="Assets/Paginador/css/bootstrap.min.css">
+    <!-- Alertify -->
+    <link rel="stylesheet" href="Assets/alertifyjs/css/alertify.css">
+    <link rel="stylesheet" href="Assets/alertifyjs/css/alertify.min.css">
     <link rel='icon' href='Resources/Img/favicon.ico' type='image/png'/>
 </head>
 <body>
@@ -54,7 +81,7 @@
                 <li>
                     <?php
                         echo "
-                            <a href='".urlsite."?page=Rempleado'>
+                            <a href='".urlsite."?page=Rempleado&Pagina=0'>
                                 <span class='icon'>
                                     <ion-icon name='person-circle-outline'></ion-icon>
                                 </span>
@@ -66,7 +93,7 @@
                 <li>
                     <?php
                         echo "
-                            <a href='".urlsite."?page=Raprendiz'>
+                            <a href='".urlsite."?page=Raprendiz&Pagina=0'>
                                 <span class='icon'>
                                     <ion-icon name='people-circle-outline'></ion-icon>
                                 </span>
@@ -78,7 +105,7 @@
                 <li>
                     <?php
                         echo "
-                            <a href='".urlsite."?page=Rcategoria'>
+                            <a href='".urlsite."?page=Rcategoria&Pagina=0'>
                                 <span class='icon'>
                                     <ion-icon name='albums-outline'></ion-icon>
                                 </span>
@@ -90,7 +117,7 @@
                 <li>
                     <?php
                         echo "
-                            <a href='".urlsite."?page=Rfecha'>
+                            <a href='".urlsite."?page=Rfecha&Pagina=0'>
                                 <span class='icon'>
                                 <ion-icon name='alarm-outline'></ion-icon>
                                 </span>

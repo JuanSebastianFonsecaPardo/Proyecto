@@ -33,13 +33,15 @@
             $dato = $Empleado->Create("empleado",$Documento,$Nombre,$Apellido,$Email,$Telefono,$data);
             if ($resultado = true) {
                 require "View/mail.php";
+            }else{
+                header('location:'.urlsite."?page=Rempleado&Pagina=0");
             }
         }   
         //Editar
          static function editar(){
             $id = $_REQUEST['id'];
             $Empleado = New Empleado();
-            $dato = $Empleado->Read("empleado","id=".$id);
+            $dato = $Empleado->editarread("empleado","id=".$id);
             require "View/Admin/Empleado/Editar.php";
         }
         //Actualizar
@@ -55,7 +57,7 @@
             $data = "Rol='$Rol',TipoDocumento='$TipoDocumento',Documento='$Documento',Nombres='$Nombre',Apellidos='$Apellido',Email='$Email',Telefono='$Telefono'";
             $Empleado = New Empleado();
             $dato = $Empleado->Update("empleado",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rempleado");
+            header('location:'.urlsite."?page=Rempleado&Pagina=0");
         }
         //Editar estado inactivo
         static function inactivo(){
@@ -63,7 +65,7 @@
             $data = "Estado='Inactivo'";
             $Empleado = New Empleado();
             $dato = $Empleado->Update("empleado",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rempleado");
+            header('location:'.urlsite."?page=Rempleado&Pagina=0");
         }
         //Papelera
         static function papelera(){
@@ -77,14 +79,14 @@
             $data = "Estado='Activo'";
             $Empleado = New Empleado();
             $dato = $Empleado->Update("empleado",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rempleado");
+            header('location:'.urlsite."?page=Rempleado&Pagina=0");
         }
         //Eliminar
         static function eliminar(){
             $id = $_REQUEST['id'];
             $Empleado = New Empleado();
             $dato = $Empleado->Delete("empleado","id=".$id);
-            header('location:'.urlsite."?page=Pempleado");
+            header('location:'.urlsite."?page=Pempleado&Pagina=0");
         }
         //Login
         static function login(){
@@ -149,10 +151,10 @@
         static function Buscar(){
             $buscar = $_REQUEST['busqueda'];
             if ($buscar == "") {
-                header('location:'.urlsite."?page=Rempleado");
+                header('location:'.urlsite."?page=Rempleado&Pagina=0");
             }
             else {
-                header('location:'.urlsite."?page=Bempleado&Buscar=".$buscar);
+                header('location:'.urlsite."?page=Bempleado&Buscar=".$buscar."&Pagina=0");
             }
         }
         //Buscado
@@ -160,6 +162,11 @@
             $Empleados = New Empleado();
             $dato = $Empleados-> Read("empleado","1");
             require "View/Admin/Empleado/Busca.php";
+        }
+        //Carga maxiva desde excel
+        static function CargaM(){
+            $Empleados = New Empleado();
+            require "View/Admin/Empleado/CargaM.php";
         }
     }
 ?>

@@ -24,13 +24,13 @@
             $data = "'$nombre','$date','$categoria'";
             $Fecha = New Fecha();
             $dato = $Fecha->Create("fecha",$data,$nombre,$date,$categoria);
-            header('location:'.urlsite."?page=Rfecha");  
+            header('location:'.urlsite."?page=Rfecha&Pagina=0");  
         }
         //Editar
          static function editar(){
             $id = $_REQUEST['id'];
             $Fecha = New Fecha();
-            $dato = $Fecha->Read("fecha","id=".$id);
+            $dato = $Fecha->editarread("fecha","id=".$id);
             require "View/Admin/Fecha/Editar.php";
         }
         //Actualizar
@@ -42,23 +42,23 @@
             $data = "Nombre='$nombre',Fecha='$date',IdCategoria='$categoria'";
             $Fecha = New Fecha();
             $dato = $Fecha->Update("fecha",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rfecha");
+            header('location:'.urlsite."?page=Rfecha&Pagina=0");
         } 
         //Eliminar
         static function eliminar(){
             $id = $_REQUEST['id'];
             $Fecha = New Fecha();
             $dato = $Fecha->Delete("fecha","id=".$id);
-            header('location:'.urlsite."?page=Rfecha");
+            header('location:'.urlsite."?page=Rfecha&Pagina=0");
         }
         //Buscar
         static function Buscar(){
             $buscar = $_REQUEST['busqueda'];
             if ($buscar == "") {
-                header('location:'.urlsite."?page=Rfecha");
+                header('location:'.urlsite."?page=Rfecha&Pagina=0");
             }
             else {
-                header('location:'.urlsite."?page=Bfecha&Buscar=".$buscar);
+                header('location:'.urlsite."?page=Bfecha&Buscar=".$buscar."&Pagina=0");
             }
         }
         //Buscado

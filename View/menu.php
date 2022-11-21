@@ -1,18 +1,4 @@
 <?php
-    function Conectar(){
-        $conn = null;
-        $host = "localhost";
-        $db = "borradorproyecto";
-        $user = "root";
-        $pwd = "";
-        try {
-            $conn = new PDO('mysql:host='.$host.';dbname='.$db,$user,$pwd);
-        } catch (PDOException $e) {
-            echo ':(Error al conectar con la base de datos)'.$e;
-            exit;
-        }
-        return $conn;
-    }
     require "Public/Layouts/Header.php";
 ?>
             <div class="cardBox">
@@ -55,11 +41,11 @@
                         <div class="numbers">
                         <?php
                                 $con = Conectar();
-                                $count = current($con->query("SELECT COUNT(id) FROM asistencia")->fetch());
+                                $count = current($con->query("SELECT COUNT(id) FROM Fecha")->fetch());
                                 echo $count;
                             ?>
                         </div>
-                        <div class="cardName">Asistencias Tomadas</div>
+                        <div class="cardName">Eventos Registrados</div>
                     </div>
 
                     <div class="iconBx">

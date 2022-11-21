@@ -1,6 +1,6 @@
 <?php
     require "Public/Layouts/Header.php";
-    echo "<br><a class='btn btn-success' href='".urlsite."?page=Cempleado'><i class='fa-solid fa-plus'></i> Crear empleado</a><br><br><a class='btn' href='".urlsite."?page=Pempleado'><i class='fa-solid fa-trash-can'></i> Papelera Empleado</a><br><br>";
+    echo "<br><a class='btn btn-success' href='".urlsite."?page=Cempleado'><i class='fa-solid fa-plus'></i> Crear empleado</a><a class='btn' href='".urlsite."?page=Pempleado&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Empleado</a><br><br>";
     ?>
         <h1>Empleados</h1>
         <form action="" method="GET">

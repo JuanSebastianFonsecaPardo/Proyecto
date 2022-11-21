@@ -43,6 +43,6 @@ if ($_GET['Email']) {
 
     $mail->send();
     echo 'Message enviado';
-    header('location:'.urlsite."?page=Rempleado");
+    header('location:'.urlsite."?page=Rempleado&Pagina=0");
 } 
 ?>

@@ -37,7 +37,7 @@
          static function editar(){
             $id = $_REQUEST['id'];
             $Asistencia = New Asistencia();
-            $dato = $Asistencia->Read("asistencia","id=".$id);
+            $dato = $Asistencia->editarread("asistencia","id=".$id);
             require "View/Admin/Asistencia/Editar.php";
         }
         //Actualizar
@@ -130,9 +130,26 @@
         //Descargar excel de un aprendiz
         static function descargarA(){
             $Busca = $_REQUEST['Buscar'];
+            $IdAprendiz = $_REQUEST['IdAprendiz'];
             $Asistencia = New Asistencia();
-            $dato = $Asistencia->Busca("asistencia","IdAprendiz=".$Busca);
+            $dato = $Asistencia->Busca("asistencia","IdAprendiz=".$IdAprendiz);
             require "View/Admin/Asistencia/DescargarA.php";
+        }
+
+        //Descargar pdf de todos 
+        static function descargarpdft(){
+            $Empleados = New Asistencia();
+            $dato = $Empleados-> Busca("asistencia","1");
+            require "View/Admin/Asistencia/Descargarpdft.php";
+        }
+
+        //Descargar pdf de todos 
+        static function descargarpdf(){
+            $Busca = $_REQUEST['Buscar'];
+            $IdAprendiz = $_REQUEST['IdAprendiz'];
+            $Empleados = New Asistencia();
+            $dato = $Empleados-> Busca("asistencia","IdAprendiz=".$IdAprendiz);
+            require "View/Admin/Asistencia/Descargarpdf.php";
         }
     }
 ?>

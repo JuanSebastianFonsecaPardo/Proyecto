@@ -30,14 +30,14 @@
             $Aprendiz = New Aprendiz();
             $dato = $Aprendiz->Create("aprendiz",$Documento,$Nombre,$Apellido,$Email,$Telefono,$data);
             if ($resultado = true) {
-                header('location:'.urlsite."?page=Raprendiz");
+                header('location:'.urlsite."?page=Raprendiz&Pagina=0");
             }
         }
         //Editar
          static function editar(){
             $id = $_REQUEST['id'];
             $Aprendiz = New Aprendiz();
-            $dato = $Aprendiz->Read("aprendiz","id=".$id);
+            $dato = $Aprendiz->editarread("aprendiz","id=".$id);
             require "View/Admin/Aprendiz/Editar.php";
         }
         //Actualizar
@@ -53,7 +53,7 @@
             $data = "TipoDocumento='$TipoDocumento',Documento='$Documento',Nombres='$Nombre',Apellidos='$Apellido',Email='$Email',Telefono='$Telefono',Categoria_Id='$Categoria'";
             $Aprendiz = New Aprendiz();
             $dato = $Aprendiz->Update("aprendiz",$data,"id=".$id);
-            header('location:'.urlsite."?page=Raprendiz");
+            header('location:'.urlsite."?page=Raprendiz&Pagina=0");
         }
         //Editar estado inactivo
         static function inactivo(){
@@ -61,7 +61,7 @@
             $data = "Estado='Inactivo'";
             $Aprendiz = New Aprendiz();
             $dato = $Aprendiz->Update("aprendiz",$data,"id=".$id);
-            header('location:'.urlsite."?page=Raprendiz");
+            header('location:'.urlsite."?page=Raprendiz&Pagina=0");
         }
         //Papelera
         static function papelera(){
@@ -75,23 +75,23 @@
             $data = "Estado='Activo'";
             $Aprendiz = New Aprendiz();
             $dato = $Aprendiz->Update("aprendiz",$data,"id=".$id);
-            header('location:'.urlsite."?page=Raprendiz");
+            header('location:'.urlsite."?page=Raprendiz&Pagina=0");
         }
         //Eliminar
         static function eliminar(){
             $id = $_REQUEST['id'];
             $Aprendiz = New Aprendiz();
             $dato = $Aprendiz->Delete("aprendiz","id=".$id);
-            header('location:'.urlsite."?page=Paprendiz");
+            header('location:'.urlsite."?page=Paprendiz&Pagina=0");
         }
         //Buscar
         static function Buscar(){
             $buscar = $_REQUEST['busqueda'];
             if ($buscar == "") {
-                header('location:'.urlsite."?page=Raprendiz");
+                header('location:'.urlsite."?page=Raprendiz&Pagina=0");
             }
             else {
-                header('location:'.urlsite."?page=Baprendiz&Buscar=".$buscar);
+                header('location:'.urlsite."?page=Baprendiz&Buscar=".$buscar."&Pagina=0");
             }
         }
         //Buscado

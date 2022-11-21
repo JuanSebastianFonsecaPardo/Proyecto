@@ -4,7 +4,7 @@
 ?>  
 <link rel='stylesheet' href='Resources/Css/cartas.css'>
 <form action="" method="get">
-<a href="<?php urlsite ?>?page=Rfecha" class="btn btn-danger"><i class="fa-solid fa-person-running"></i> Salir</a>
+<a href="<?php urlsite ?>?page=Rfecha&Pagina=0" class="btn btn-danger"><i class="fa-solid fa-person-running"></i> Salir</a>
 <div class='titulocard'>
     <h1>Participantes</h1>
     <div class='line'></div>

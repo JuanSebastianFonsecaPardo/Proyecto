@@ -1,6 +1,14 @@
 <?php
     require "Public/Layouts/Header.php";
     $Busca = $_REQUEST['Buscar'];
+    //Aprendiz
+    $nombrec = $_REQUEST['Buscar'];              
+    $conexion = mysqli_connect('localhost','root','','borradorproyecto') or die (mysqli_error());
+    $consulta = "SELECT * FROM aprendiz WHERE Documento=".$nombrec;
+    $ejecutar = mysqli_query($conexion,$consulta)or die(mysqli_error($conexion));
+    foreach ($ejecutar as $opciones) {
+        $IdAprendizBuscado = $opciones['id'];
+    }
 ?>
         <h1>Asistencia</h1>
         <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
@@ -84,7 +92,8 @@
             ?> 
             </tbody>
         </table>
-        <a href="<?php urlsite ?>?page=ARasistenciaexcel&Buscar=<?php echo $Busca?>" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Descargar Informe excel</a>
+        <a href="<?php urlsite ?>?page=ARasistenciaexcel&Buscar=<?php echo $Busca?>&IdAprendiz=<?php echo $IdAprendizBuscado; ?>" class="btn btn-success"><i class="fa-solid fa-file-excel"></i> Descargar Informe excel</a>
+        <a href="<?php urlsite ?>?page=ARasistenciapdf&Buscar=<?php echo $Busca?>&IdAprendiz=<?php echo $IdAprendizBuscado; ?>" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> Descargar Informe PDF</a>
 <?php
     require "Public/Layouts/Footer.php";
 ?>  

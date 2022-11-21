@@ -26,14 +26,14 @@
             $Categoria = New Categoria();
             $dato = $Categoria->Create("categoria",$Nombre,$Descripcion,$data);
             if ($resultado = true) {
-                header('location:'.urlsite."?page=Rcategoria");
+                header('location:'.urlsite."?page=Rcategoria&Pagina=0");
             }
         }
         //Editar
          static function editar(){
             $id = $_REQUEST['id'];
             $Categoria = New Categoria();
-            $dato = $Categoria->Read("categoria","id=".$id);
+            $dato = $Categoria->editarread("categoria","id=".$id);
             require "View/Admin/Categoria/Editar.php";
         }
         //Actualizar
@@ -45,7 +45,7 @@
             $data = "Nombre='$Nombre',Descripcion='$Descripcion',IdEmpleado='$Empleado'";
             $Categoria = New Categoria();
             $dato = $Categoria->Update("categoria",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rcategoria");
+            header('location:'.urlsite."?page=Rcategoria&Pagina=0");
         }
         //Editar estado inactivo
         static function inactivo(){
@@ -53,7 +53,7 @@
             $data = "Estado='Inactivo'";
             $Categoria = New Categoria();
             $dato = $Categoria->Update("categoria",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rcategoria");
+            header('location:'.urlsite."?page=Rcategoria&Pagina=0");
         }
         //Papelera
         static function papelera(){
@@ -67,30 +67,30 @@
             $data = "Estado='Activo'";
             $Categoria = New Categoria();
             $dato = $Categoria->Update("categoria",$data,"id=".$id);
-            header('location:'.urlsite."?page=Rcategoria");
+            header('location:'.urlsite."?page=Rcategoria&Pagina=0");
         }
         //Eliminar
         static function eliminar(){
             $id = $_REQUEST['id'];
             $Categoria = New Categoria();
             $dato = $Categoria->Delete("categoria","id=".$id);
-            header('location:'.urlsite."?page=Pcategoria");
+            header('location:'.urlsite."?page=Pcategoria&Pagina=0");
         }
         //Buscar
         static function Buscar(){
             $buscar = $_REQUEST['busqueda'];
             if ($buscar == "") {
-                header('location:'.urlsite."?page=Rcategoria");
+                header('location:'.urlsite."?page=Rcategoria&Pagina=0");
             }
             else {
-                header('location:'.urlsite."?page=Bcategoria&Buscar=".$buscar);
+                header('location:'.urlsite."?page=Bcategoria&Buscar=".$buscar."&Pagina=0");
             }
         }
         //Buscado
-        static function Buscado(){
-            $Empleados = New Aprendiz();
+        static function buscado(){
+            $Empleados = New Categoria();
             $dato = $Empleados-> Consultar("categoria","1");
-            require "View/admin/Categoria/Consulta.php";
+            require "View/admin/Categoria/Buscar.php";
         }
     }
 ?>

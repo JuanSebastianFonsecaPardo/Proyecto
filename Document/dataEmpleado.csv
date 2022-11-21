@@ -1,0 +1,8 @@
+﻿Rol;TipoDoc;Doc;Nombre;Apellido;email;Telefono;Estado;Pass
+Instructor;Cedula;12345;Andres;Fonseca;Andres@mail.com;125;Activo;123
+Instructor;Cedula;12346;Sebas;Pardo;Sebas@mail.com;126;Inactivo;124
+Director Deportivo;Tarjeta Identidad;98765;Alejandra;Espejo;Aleja@mail.com;127;Activo;125
+Instructor;Cedula;127572;Estefania;Espejo;Estefania@mail.com;128;Activo;126
+Instructor;Cedula;170782;Yadira;Pardo;Yadira@mail.com;129;Inactivo;127
+Director Deportivo;Tarjeta Identidad;213992;William;Fonseca;William@mail.com;130;Activo;128
+Instructor;Cedula;257202;Cristian;Rodriguez;Cristian@mail.com;131;Activo;129
