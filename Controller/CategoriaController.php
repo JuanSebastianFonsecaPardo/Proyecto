@@ -58,7 +58,7 @@
         //Papelera
         static function papelera(){
             $Empleados = New Categoria();
-            $dato = $Empleados-> Read("categoria","1");
+            $dato = $Empleados-> papeleraread("categoria","1");
             require "View/Admin/Categoria/Papelera.php";
         }
         //Editar estado activo

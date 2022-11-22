@@ -66,7 +66,7 @@
         //Papelera
         static function papelera(){
             $Empleados = New Aprendiz();
-            $dato = $Empleados-> Read("aprendiz","1");
+            $dato = $Empleados-> papeleraread("aprendiz","1");
             require "View/Admin/Aprendiz/Papelera.php";
         }
         //Editar estado activo
@@ -99,6 +99,11 @@
             $Empleados = New Aprendiz();
             $dato = $Empleados-> Read("aprendiz","1");
             require "View/admin/Aprendiz/Buscar.php";
+        }
+        //Carga maxiva desde excel
+        static function CargaM(){
+            $Empleados = New Aprendiz();
+            require "View/Admin/Aprendiz/CargaM.php";
         }
     }
 ?>

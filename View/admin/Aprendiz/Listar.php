@@ -1,6 +1,9 @@
 <?php
     require "Public/Layouts/Header.php";
-    echo "<br><a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a><a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
+    echo "<br>
+    <a href='".urlsite."?page=CargaMasivaAprendiz' class='btn btn-success'><i class='fa-solid fa-file-excel'></i> Carga Masiva</a>
+    <a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a>
+    <a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
      //Cantidad de registros por pagina
      $Registros_x_pagina = 5;
      //Contar lista de registro

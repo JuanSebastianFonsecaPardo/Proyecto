@@ -70,5 +70,16 @@
             }
             return $this->datos;
         }
+
+        //Papelera
+
+        public function papeleraread($tabla, $condicion){
+            $consulta = "SELECT * FROM ".$tabla." WHERE ".$condicion;
+            $resultado = $this->db->query($consulta);
+            while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
+                $this->datos[]= $filas;
+            }
+            return $this->datos;
+        }
     }
 ?>

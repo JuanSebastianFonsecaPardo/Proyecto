@@ -109,6 +109,9 @@
         case 'Baprendiz':
             AprendizController::buscado();
             break;
+        case 'CargaMasivaAprendiz':
+            AprendizController::CargaM();
+            break;
         /* INICIO CATEGORIA */
         case 'Ccategoria': 
             CategoriaController::nuevo();

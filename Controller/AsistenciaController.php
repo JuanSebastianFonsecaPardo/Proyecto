@@ -64,7 +64,7 @@
         //Papelera
         static function papelera(){
             $Empleados = New Asistencia();
-            $dato = $Empleados-> Read("asistencia","1");
+            $dato = $Empleados-> papeleraread("asistencia","1");
             require "View/Admin/Asistencia/Papelera.php";
         }
         //Editar estado activo
