@@ -3,10 +3,10 @@
 ?>  
 <form action="" method="GET" class="container-form">
 <div class="contenedor-formularios-nuevos">
-    <h1>CREAR CATEGORIA </h1>
+    <h1>CREAR CATEGORÍA </h1>
     <label for="">Nombre</label><br>
     <input type="text" name="Nombre" placeholder="Nombres" class="campo"><br>
-    <label for="">Descripcion</label><br>
+    <label for="">Descripción</label><br>
     <input type="text" name="Descripcion" placeholder="Descripcion" class="campo"><br>
     <label for="">Empleado encargado</label><br>
     <select name="Empleado" class="campo">

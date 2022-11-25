@@ -77,7 +77,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Aprendiz</th>
+                <th scope="col">Estudiante</th>
                 <th scope="col">Asistencia</th>
                 </tr>
             </thead>

@@ -60,5 +60,8 @@ foreach ($lineas as $linea) {
     $i++;
 }
 echo '<p>Total de registros = '.$cantidad_regist_agregados.'</p>';
-header('location:'."../../../?page=Rempleado&Pagina=0");
+echo "<script>
+    window.alert('La carga masiva fue cargada correctamente.');
+    window.location = '../../../?page=Rempleado&Pagina=0';
+    </script>";
 ?>

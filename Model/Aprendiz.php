@@ -47,7 +47,7 @@
            $Registros_x_pagina = 5;
            //Limitar articulos por pagina
            $iniciar = ($_GET['Pagina'])*$Registros_x_pagina;
-           $consulta = 'SELECT * FROM '.$tabla.' Limit '.$iniciar.',5';
+           $consulta = 'SELECT * FROM '.$tabla.' WHERE Estado = "Activo" Limit '.$iniciar.',5';
            $resultado = $this->db->query($consulta);
            while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
                $this->datos[]= $filas;

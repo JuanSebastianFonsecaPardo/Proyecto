@@ -9,7 +9,8 @@
         //mostrar
         static function index(){
             $Empleados = New Empleado();
-            $dato = $Empleados-> Read("empleado","1");
+            $data = "Estado = 'Activo'";
+            $dato = $Empleados-> Read("empleado",$data ,"1");
             require "View/Admin/Empleado/Listar.php";
         }
         //Nuevo
@@ -26,7 +27,8 @@
             $Rol = $_REQUEST['Rol'];
             $Email = $_REQUEST['Email'];
             $Telefono = $_REQUEST['Telefono'];
-            $Password = md5($_REQUEST['Pass']); 
+            $Password = $_REQUEST['Pass'];
+            $Password_sin_encriptar = $_REQUEST['Pass_sin']; 
             $Estado = $_REQUEST['Estado'];  
             $data = "'$Rol','$TipoDocumento','$Documento','$Nombre','$Apellido','$Email','$Telefono','$Estado','$Password'";
             $Empleado = New Empleado();
@@ -95,12 +97,15 @@
         //Ingresar
         static function ingresar(){
             $Email = $_REQUEST['Correo'];
-            $Password = md5($_REQUEST['Password']);
+            $passl = $_REQUEST['Password'];
+            $sha1 = sha1($passl);
+            $md5 = md5($sha1);
+            $encriptada = sha1($md5);
             session_start();
             $_SESSION["Correo"] = $_REQUEST['Correo'];
             $Empleado = New Empleado();
             $Email = "Email='$Email'";
-            $Password = "password='$Password'";
+            $Password = "password='$encriptada'";
             $dato = $Empleado-> login("empleado", $Email , $Password);
         }
         //Cerrar
@@ -122,7 +127,15 @@
         //Recuperar
         static function Recuperar(){
             $Email = $_REQUEST['Email'];
-            $Password = md5($_REQUEST['Pass']); 
+            $nombrec = $Email;                 
+            $conexion = mysqli_connect('localhost','root','','borradorproyecto') or die (mysqli_error());
+            $consulta = "SELECT * FROM empleado WHERE Email='".$nombrec."'";
+            $ejecutar = mysqli_query($conexion,$consulta)or die(mysqli_error($conexion));
+            foreach ($ejecutar as $opciones) {
+            $nombre = $opciones['Nombres'];
+            }
+            $Password = $_REQUEST['Pass'];
+            $Password_sin_encriptar = $_REQUEST['Pass_sin']; 
             $data = "password='$Password'";
             $Empleado = New Empleado();
             $dato = $Empleado->ClaveR("password='$Password'","Email='$Email'");
@@ -135,13 +148,27 @@
         //Cambiar clave
         static function Clave(){
             $Email = $_REQUEST['Email'];
-            $Password = md5($_REQUEST['Pass']); 
-            $data = "password='$Password'";
-            $Empleado = New Empleado();
-            $dato = $Empleado->ClaveR("password='$Password'","Email='$Email'");
-            session_start();
-            session_destroy();
-            header('location:'.urlsite."?page=Login");
+            $Nombre = $_REQUEST['Nombre'];
+            $Password = $_REQUEST['Pass']; 
+            $Password2 = $_REQUEST['Pass2']; 
+            $sha1 = sha1($Password);
+            $md5 = md5($sha1);
+            $encriptada = sha1($md5);
+            if (!empty($Password && $Password2)) {
+                if ($Password == $Password2) {
+                    $Empleado = New Empleado();
+                    $dato = $Empleado->ClaveR("password='$encriptada'","Email='$Email'");
+                    session_start();
+                    session_destroy();
+                    require "View/ContrasenaCambiada.php";
+                }   
+                else {
+                echo "<script>window.alert('Las contraseñas no coninciden, por favor vuelva a iniciar sesión')</script>";
+                }
+            }
+            else {
+                echo "<script>window.alert('Los campos se encuentran vacios, por favor vuelva a iniciar sesión')</script>";
+            }
         }
         //Contacto
         static function Contacto(){

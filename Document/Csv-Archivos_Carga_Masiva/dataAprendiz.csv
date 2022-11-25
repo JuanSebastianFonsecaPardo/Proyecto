@@ -1,14 +1,14 @@
-﻿TipoDoc;Doc;Nombre;Apellido;email;Telefono;Categoria;Estado
-Cedula;12345;Andres;Fonseca;Andres@mail.com;125;14;Activo
-Cedula;12346;Sebas;Pardo;Sebas@mail.com;126;14;Inactivo
-Cedula;12347;Alejandra;Espejo;Aleja@mail.com;127;14;Activo
-Cedula;12348;Estefania;Espejo;Estefania@mail.com;128;14;Activo
-Cedula;12349;Yadira;Pardo;Yadira@mail.com;129;14;Inactivo
-Cedula;12350;William;Fonseca;William@mail.com;130;14;Activo
-Cedula;12351;Cristian;Rodriguez;Cristian@mail.com;131;14;Activo
-Cedula;12352;Camilo;Bravo;Camilo@mail.com;113;14;Activo
-Cedula;12353;Maria;Rocha;Maria@mail.com;107;14;Inactivo
-Cedula;12354;Jackson;Montoya;Jackson@mail.com;102;14;Inactivo
-Cedula;12355;Erick;Noguera;Erick@mail.com;129;14;Activo
-Cedula;12356;Gabriel;Murillo;Gabriel@mail.com;156;14;Inactivo
-Cedula;12357;Camilo;Diaz;Camilo@mail.com;173;14;Activo
+﻿TipoDoc;Doc;Nombre;Apellido;email;Telefono;Estado;Categoria
+Cedula;12345;Andres;Fonseca;Andres@mail.com;125;Activo;13
+Cedula;12346;Sebas;Pardo;Sebas@mail.com;126;Activo;13
+Tarjeta Identidad;98765;Alejandra;Espejo;Aleja@mail.com;127;Activo;13
+Cedula;127572;Estefania;Espejo;Estefania@mail.com;128;Activo;13
+Cedula;170782;Yadira;Pardo;Yadira@mail.com;129;Activo;13
+Tarjeta Identidad;213992;William;Fonseca;William@mail.com;130;Activo;13
+Cedula;257202;Cristian;Rodriguez;Cristian@mail.com;131;Activo;13
+Tarjeta Identidad;1011081522;Camilo;Bravo;Camilo@mail.com;113;Activo;13
+Tarjeta Identidad;1119583655;Maria;Rocha;Maria@mail.com;107;Activo;13
+Cedula;1021959597;Jackson;Montoya;Jackson@mail.com;102;Activo;13
+Tarjeta Identidad;1061752989;Erick;Noguera;Erick@mail.com;129;Activo;13
+Cedula;1056192037;Gabriel;Murillo;Gabriel@mail.com;156;Activo;13
+Cedula;1172631074;Camilo;Diaz;Camilo@mail.com;173;Activo;13

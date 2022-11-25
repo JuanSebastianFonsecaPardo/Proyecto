@@ -1,6 +1,6 @@
 <?php
     require "Public/Layouts/Header.php";
-    echo "<br><a class='btn btn-success' href='".urlsite."?page=Ccategoria'><i class='fa-solid fa-plus'></i> Crear Categoria</a><a class='btn' href='".urlsite."?page=Pcategoria&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Categoria</a><br><br>";
+    echo "<br><a class='btn btn-success' href='".urlsite."?page=Ccategoria'><i class='fa-solid fa-plus'></i> Crear Categoría</a><a class='btn' href='".urlsite."?page=Pcategoria&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Categoría</a><br><br>";
      //Cantidad de registros por pagina
      $Registros_x_pagina = 5;
      //Contar lista de registro
@@ -13,7 +13,7 @@
      //Imprimir el numero de paginas
      // echo $Paginas     
 ?>
-        <h1>Categoria</h1>
+        <h1>Categoría</h1>
         <form action="" method="GET">
             <input type="text" name="busqueda">
             <input type="submit" class="btn btn-primary" value="Buscar">
@@ -24,7 +24,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Description</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Empleado</th>
                 <th scope="col" colspan="2">Acciones</th>
                 </tr>

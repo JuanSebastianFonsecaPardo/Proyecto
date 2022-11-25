@@ -23,7 +23,7 @@
         <img src="Resources/Img/Logo-Lado.png" class="Logo">
         <h1>INFORME DE ASISTENCIAS.</h1>
     </DIV>
-    <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?>.</p>
+    <p>Asistencias del Estudiante del No de documento <?php echo $Busca ?>.</p>
     <br> <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>

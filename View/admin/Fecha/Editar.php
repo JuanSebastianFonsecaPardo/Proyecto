@@ -12,7 +12,7 @@
             <input type="text" name="Nombre" value="<?php echo $v['Nombre'] ?>" class="campo"><br>
             <label for="">Fecha</label><br>
             <input type="date" name="Fecha" value="<?php echo $v['Fecha'] ?>" class="campo"><br>
-            <label for="">Categoria</label><br>
+            <label for="">Categoría</label><br>
             <select name="Categoria" class="campo">
                 <?php
                     include 'Config/Conexion.php';

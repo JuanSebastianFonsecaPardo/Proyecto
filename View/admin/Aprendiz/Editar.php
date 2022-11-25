@@ -3,7 +3,7 @@
 ?>  
 <form action="" method="GET" class="container-form">
 <div class="contenedor-formularios-nuevos">
-    <h1>EDITAR APRENDIZ</h1>
+    <h1>EDITAR ESTUDIANTES</h1>
     <?php
         foreach ($dato as $key => $value) {
             foreach ($value as $v) {

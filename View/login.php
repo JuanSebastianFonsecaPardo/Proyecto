@@ -26,8 +26,8 @@
 
         </form>
         <?php
-echo "<a href='".urlsite."?page=Olvido'>Olvido su clave?</a>";
-?>
+        echo "<a href='".urlsite."?page=Olvido'>Olvido su clave?</a>";
+        ?>
     </div>
 
     <div class="ctn-text">

@@ -8,7 +8,7 @@
     <input type="text" name="Nombre" class="campo"><br>
     <label for="">Fecha</label><br>
     <input type="date" name="Fecha" class="campo"><br>
-    <label for="">Categoria</label><br>
+    <label for="">Categoría</label><br>
     <select name="Categoria" class="campo">
         <?php
             include 'Config/Conexion.php';

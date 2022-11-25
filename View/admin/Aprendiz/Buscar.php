@@ -3,7 +3,7 @@
     require "Public/Layouts/Header.php";
     echo "<br><a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a><a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
     ?>
-        <h1>Aprendiz</h1>
+        <h1>ESTUDIANTES</h1>
         <form action="" method="GET">
             <input type="number" name="busqueda">
             <input type="submit" class="btn btn-primary" value="Buscar">

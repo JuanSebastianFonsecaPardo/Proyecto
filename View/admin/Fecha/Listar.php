@@ -29,7 +29,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Categoría</th>
                 <th scope="col">Tomar Asistencia</th>
                 <th scope="col" colspan="3">Acciones</th>
                 </tr>

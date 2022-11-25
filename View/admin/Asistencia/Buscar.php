@@ -11,14 +11,14 @@
     }
 ?>
         <h1>Asistencia</h1>
-        <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
+        <p>Asistencias del Estudiante del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
         <br>
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Aprendiz</th>
+                <th scope="col">Estudiante</th>
                 <th scope="col">Asistencia</th>
                 <th scope="col" colspan="2">Acciones</th>
                 </tr>

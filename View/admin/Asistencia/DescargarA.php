@@ -1,15 +1,15 @@
 <?php
     header("Content-Type application/xls");
-    header("Content-Disposition: attachment; filename= InformeAprendiz.xls");
+    header("Content-Disposition: attachment; filename= InformeEstudiante.xls");
 ?>
         <h1>Asistencia</h1>
-        <p>Asistencias del aprendiz del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
+        <p>Asistencias del Estudiante del No de documento <?php echo $Busca ?> para descargar un informe deslice hasta el final de la tabla.</p>
         <br> <table class="table table-striped table-bordered">
             <thead class="table-dark">
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Aprendiz</th>
+                <th scope="col">Estudiante</th>
                 <th scope="col">Asistencia</th>
                 </tr>
             </thead>

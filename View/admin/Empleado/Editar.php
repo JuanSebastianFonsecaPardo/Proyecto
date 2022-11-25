@@ -52,7 +52,7 @@
             </select><br>
             <label for="">Correo</label><br>
             <input type="email" name="Email" value="<?php echo $v['Email'] ?>" class="campo"><br>
-            <label for="">Telefono</label><br>
+            <label for="">Teléfono</label><br>
             <input type="number" name="Telefono" value="<?php echo $v['Telefono'] ?>" class="campo"><br>
             <input type="hidden" value="<?php echo $v['id'] ?>" name="id"><br>
             <input type="submit" class="btn-enviar" name="btn" value="Actualizar">

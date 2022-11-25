@@ -3,14 +3,14 @@
 ?>  
 <form action="" method="GET" class="container-form" >
 <div class="contenedor-formularios-nuevos">
-    <h1>EDITAR CATEGORIA </h1>
+    <h1>EDITAR CATEGORÍA </h1>
     <?php
         foreach ($dato as $key => $value) {
             foreach ($value as $v) {
     ?>
             <label for="">Nombre</label><br>
             <input type="text" name="Nombre" value="<?php echo $v['Nombre'] ?>" class="campo"><br>
-            <label for="">Descripcion</label><br>
+            <label for="">Descripción</label><br>
             <input type="text" name="Descripcion" value="<?php echo $v['Descripcion'] ?>" class="campo"><br>
             <label for="">Empleado encargado</label><br>
             <select name="Empleado" class="campo">

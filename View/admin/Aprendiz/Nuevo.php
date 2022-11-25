@@ -4,7 +4,7 @@
 ?>  
 <form action="" method="GET" class="container-form">
     <div class="contenedor-formularios-nuevos">
-    <h1>CREAR APRENDIZ</h1>
+    <h1>CREAR ESTUDIANTE</h1>
     <label for="">Documento</label><br>
     <input type="number" name="Documento" placeholder="Documento" class="campo"><br>
     <label for="">Tipo de documento</label><br>

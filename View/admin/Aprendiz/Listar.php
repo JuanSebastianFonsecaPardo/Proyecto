@@ -2,13 +2,13 @@
     require "Public/Layouts/Header.php";
     echo "<br>
     <a href='".urlsite."?page=CargaMasivaAprendiz' class='btn btn-success'><i class='fa-solid fa-file-excel'></i> Carga Masiva</a>
-    <a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Aprendiz</a>
-    <a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Aprendiz</a><br><br>";
+    <a class='btn btn-success' href='".urlsite."?page=Caprendiz'><i class='fa-solid fa-plus'></i> Crear Estudiante</a>
+    <a class='btn' href='".urlsite."?page=Paprendiz&Pagina=0'><i class='fa-solid fa-trash-can'></i> Papelera Estudiante</a><br><br>";
      //Cantidad de registros por pagina
      $Registros_x_pagina = 5;
      //Contar lista de registro
      $con = Conectar();
-     $count = current($con->query("SELECT COUNT(id) FROM aprendiz")->fetch());
+     $count = current($con->query("SELECT COUNT(id) FROM aprendiz WHERE Estado='Activo' ")->fetch());
      //Paginas totales
      $Paginas = $count/$Registros_x_pagina;
      //Redondear el numero de paginas en case que de x.3
@@ -17,7 +17,7 @@
      // echo $Paginas
  
 ?>
-        <h1>Aprendiz</h1>
+        <h1>ESTUDIANTES</h1>
         <form action="" method="GET">
             <input type="number" name="busqueda">
             <input type="submit" class="btn btn-primary" value="Buscar">
@@ -32,7 +32,7 @@
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col">Categoria</th>
                 <th scope="col" colspan="2">Acciones</th>
                 </tr>

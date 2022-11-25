@@ -16,7 +16,7 @@
                 header('location:'.urlsite."?page=Rempleado&Pagina=0");
             }
             else{
-                //Duplicidad
+                // Duplicidad
                     $consultaD = "SELECT * FROM ".$tabla." WHERE Documento=".$Documento.";";
                     $conexionD = mysqli_connect("localhost","root","","borradorproyecto");
                     $resultadoD = mysqli_query($conexionD ,$consultaD);
@@ -39,12 +39,12 @@
             }
         }
         //Leer
-        public function Read($tabla, $condicion){
+        public function Read($tabla,$data, $condicion){
              //Cantidad de registros por pagina
             $Registros_x_pagina = 5;
             //Limitar articulos por pagina
             $iniciar = ($_GET['Pagina'])*$Registros_x_pagina;
-            $consulta = 'SELECT * FROM '.$tabla.' Limit '.$iniciar.',5';
+            $consulta = 'SELECT * FROM '.$tabla.' WHERE '.$data.' Limit '.$iniciar.',5';
             $resultado = $this->db->query($consulta);
             while ($filas = $resultado->FETCHALL(PDO::FETCH_ASSOC)) {
                 $this->datos[]= $filas;
@@ -78,7 +78,7 @@
 
         //Login
          public function login($tabla, $Email, $Password){
-            $consulta = "SELECT * FROM ".$tabla." WHERE ".$Email."AND ".$Password.";";
+            $consulta = "SELECT * FROM ".$tabla." WHERE ".$Email."AND " .$Password.";";
             $conexion = mysqli_connect("localhost","root","","borradorproyecto");
             $resultado = mysqli_query($conexion ,$consulta);
             $filas = mysqli_num_rows($resultado);   
@@ -86,7 +86,7 @@
                 header('location:'.urlsite."?page=Menu");
             }
             else {
-                echo "<h1 class='text-danger'>ERROR EN LOS DATOS DILIGENCIADOS INTENTELO NUEVA MENTE </h1>";
+                echo '<h1 class="text-danger">ERROR EN LOS DATOS DILIGENCIADOS INTENTELO NUEVA MENTE.</h1><br><br>';
             }
             mysqli_free_result($resultado);
             mysqli_close($conexion);

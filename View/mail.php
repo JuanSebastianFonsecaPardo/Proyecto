@@ -6,7 +6,8 @@ if ($varsesion == null || $varsesion == '') {
     die();
 }
 $_GET['Email'];
-$_GET['Pass'];
+$_GET['Pass_sin']; 
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -39,7 +40,7 @@ if ($_GET['Email']) {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Registro en la plataforma';
-    $mail->Body    = 'Bienvenido puede ingresar con el correo '.$_GET['Email'].' y su clave para ingreso es '.$_GET['Pass'].' .';
+    $mail->Body    = 'Bienvenido puede ingresar con el correo '.$_GET['Email'].' y su clave para ingreso es <b>'.$_GET['Pass_sin'].'</b>.';
 
     $mail->send();
     echo 'Message enviado';

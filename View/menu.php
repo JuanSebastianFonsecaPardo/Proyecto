@@ -11,7 +11,7 @@
                                 echo $count;
                             ?>
                         </div>
-                        <div class="cardName">Aprendices Registrados</div>
+                        <div class="cardName">Estudiantes Registrados</div>
                     </div>
 
                     <div class="iconBx">
@@ -62,7 +62,7 @@
                                 echo $count;
                             ?>
                         </div>
-                        <div class="cardName">Categorias</div>
+                        <div class="cardName">Categorías</div>
                     </div>
 
                     <div class="iconBx">
@@ -75,7 +75,7 @@
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Ultimas Asistencias</h2>
+                        <h2>Últimas Asistencias</h2>
                         <?php
                         echo "
                             <a href='".urlsite."?page=Rasistencia'>
@@ -93,7 +93,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Aprendiz</th>
+                <th scope="col">Estudiantes</th>
                 <th scope="col">Asistencia</th>
                 </tr>
             </thead>

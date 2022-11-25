@@ -29,8 +29,8 @@ foreach ($lineas as $linea) {
         $Apellido       = !empty($datos[3]) ? ($datos[3]) : '';
         $Email          = !empty($datos[4]) ? ($datos[4]) : '';
         $Telefono       = !empty($datos[5]) ? ($datos[5]) : '';   
-        $Categoria      = !empty($datos[6]) ? ($datos[6]) : '';   
-        $Estado         = !empty($datos[7]) ? ($datos[7]) : '';
+        $Estado         = !empty($datos[6]) ? ($datos[6]) : '';
+        $Categoria      = !empty($datos[7]) ? ($datos[7]) : '';   
     
         $insertar = "INSERT INTO aprendiz ( 
             TipoDocumento,
@@ -39,8 +39,8 @@ foreach ($lineas as $linea) {
             Apellidos,
             Email,
             Telefono,
-            Categoria_Id,
-            Estado
+            Estado,
+            Categoria_Id
         ) VALUES(
             '$TipoD',
             '$Documento',
@@ -48,14 +48,16 @@ foreach ($lineas as $linea) {
             '$Apellido',
             '$Email',
             '$Telefono',
-            '$Categoria',
-            '$Estado'
-        )";
+            '$Estado',
+            '$Categoria')";
         mysqli_query($con, $insertar);
     }
     echo '<div>'.$i.").".$linea.'</div>';
     $i++;
 }
 echo '<p>Total de registros = '.$cantidad_regist_agregados.'</p>';
-header('location:'."../../../?page=Raprendiz&Pagina=0");
+echo "<script>
+    window.alert('La carga masiva fue cargada correctamente.');
+    window.location = '../../../?page=Raprendiz&Pagina=0';
+    </script>";
 ?>

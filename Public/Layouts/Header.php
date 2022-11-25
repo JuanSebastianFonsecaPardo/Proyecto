@@ -97,7 +97,7 @@
                                 <span class='icon'>
                                     <ion-icon name='people-circle-outline'></ion-icon>
                                 </span>
-                                <span class='title'>Aprendices</span>
+                                <span class='title'>Estudiantes</span>
                             </a>
                         ";
                     ?>
@@ -109,7 +109,7 @@
                                 <span class='icon'>
                                     <ion-icon name='albums-outline'></ion-icon>
                                 </span>
-                                <span class='title'>Categoria</span>
+                                <span class='title'>Categoría</span>
                             </a>
                         ";
                     ?>

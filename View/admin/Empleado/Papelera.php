@@ -12,7 +12,7 @@
                 <th scope="col">Apellidos</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col" colspan="2">Acciones</th>
                 </tr>
             </thead>

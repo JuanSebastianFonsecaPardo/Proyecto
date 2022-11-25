@@ -1,8 +1,17 @@
 <?php
-    $pass = mt_rand(100000 , 999999);
-    $passl = $pass;
+    $length= 12;
+    $key = "";
+    $pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
+    $max = strlen($pattern)-1;
+    for($i = 0; $i < $length; $i++){
+        $key .= substr($pattern, mt_rand(0,$max), 1);
+    }
+    $passl = $key;
+    //Encriptar
+    $sha1 = sha1($passl);
+    $md5 = md5($sha1);
+    $encriptada = sha1($md5);
     require "Public/Layouts/Header.php";
-    
 ?>  
 <form action="" method="GET" class="container-form">
 <div class="contenedor-formularios-nuevos">
@@ -25,9 +34,10 @@
     </select><br>
     <label for="">Correo</label><br>
     <input type="email" name="Email" placeholder="Correo" class="campo"><br>
-    <label for="">Telefono</label><br>
+    <label for="">Teléfono</label><br>
     <input type="number" name="Telefono" placeholder="Telefono" class="campo"><br><br>
-    <input type="hidden" name="Pass" <?php echo "value=$pass" ?>>
+    <input type="hidden" name="Pass" <?php echo "value=$encriptada" ?>>
+    <input type="hidden" name="Pass_sin" <?php echo "value=$passl" ?>>
     <input type="hidden" name="Estado" value="Activo">
     <input type="submit" class="btn-enviar" name="n" value="Crear">
     <input type="hidden" name="m" value="guardar">

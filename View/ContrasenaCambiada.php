@@ -1,7 +1,8 @@
 <?php
+
 $_GET['Email'];
-$_GET['Nombre'];
-$_GET['Mensaje'];
+$_REQUEST['Nombre'];
+$_GET['Pass']; 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -16,7 +17,6 @@ require 'Assets/PHPMailer/src/SMTP.php';
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-//reemplzar mensaje por plantilla HTML
 $incss  = "<head><style>
 :root{
     --Color1: #ffffff;
@@ -113,26 +113,23 @@ body{
 }
 </style></head>";
 
-
 $cuerpo = '
 
-<Div class="contenedor" >
-<div class="contenedor-texto-imagen" align="center">
-    <img src="https://i.postimg.cc/9FMrYksK/Logo-Lado-Negro-Abajo.png" width="100" height="100">
-    <h1 class="Texto-correo"><center>Solicitud de Información</center></h1>
-    <hr>
-</div>
-</Div>
-<div class="content">
-    <h2 id="Nombre">
-        Hola!
-    </h2>
+<Div class="contenedor">
+        <div class="contenedor-texto-imagen" align="center">
+            <img src="https://i.postimg.cc/9FMrYksK/Logo-Lado-Negro-Abajo.png" class="Imagen-correo">
+            <h1 class="Texto-correo"><center>Cambio de contraseña</center></h1>
+            <hr>
+    </Div>    
+    <div class="content">
+        <h2 id="Nombre">
+            Hola! <b>'.$_GET['Nombre'].'</b>
+        </h2>
 
-    <p>Nos permitimos comunicarte que, mediante el formulario de contacto de sistema PIVOOT, se ha hecho una solicitud de información con la siguiente descripción.</p>
-    <p><b>Nombre: </b>'.$_GET['Nombre'].'</p>
-    <p><b>Correo: </b>'.$_GET['Email'].'</p>
-    <p><b>Mensaje: </b>'.$_GET['Mensaje'].'</p>
-</div>
+        <p>Según tu solicitud de cambio de contraseña; nos permitimos enviar una de respaldo, para que ingreses al sistema</p><br>
+        <p>Contraseña :  <b>'.$_GET['Pass'].'</b></p><br>
+        <p>Esperamos puedas seguir disfrutando de nuestros servicios.</p><br>
+        <p>Que tengas un bien dia.</p>
 <hr>
 <br>
 <footer class="pie-pagina">
@@ -159,24 +156,23 @@ $cuerpo = '
 try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->CharSet      = 'UTF-8';
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->isSMTP();                   
+    $mail->CharSet      = 'UTF-8';                               //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                  //Enable SMTP authentication
     $mail->Username   = 'pivoot23@gmail.com';                     //SMTP username
-    $mail->Password   = 'fpsqhamtzmqxupmv';                               //SMTP password
+    $mail->Password   = 'fpsqhamtzmqxupmv';                      //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('pivoot23@gmail.com');
-    $mail->addAddress('pivoot23@gmail.com');
+    $mail->setFrom('pivoot23@gmail.com', 'CAMBIO DE CONTRASENA');
+    $mail->addAddress($_GET['Email']);
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Solicitud de informacion PIVOOT';
+    $mail->Subject = 'Cambio de contrasña servicios PIVOOT';
     $mail->Body    = $incss.$cuerpo;
-
     
     echo "
     <script>

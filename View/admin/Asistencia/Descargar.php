@@ -5,7 +5,7 @@
     <table class="table table-striped table-bordered">
     <thead class="table-dark">
         <tr>
-        <th scope="col">Aprendiz</th>
+        <th scope="col">Estudiante</th>
         <th scope="col">Asistencia</th>
         </tr>
     </thead>

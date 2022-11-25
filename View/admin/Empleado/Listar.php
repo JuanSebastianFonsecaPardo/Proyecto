@@ -7,7 +7,7 @@
     $Registros_x_pagina = 5;
     //Contar lista de registro
     $con = Conectar();
-    $count = current($con->query("SELECT COUNT(id) FROM empleado")->fetch());
+    $count = current($con->query("SELECT COUNT(id) FROM empleado WHERE Estado = 'Activo' ")->fetch());
     //Paginas totales
     $Paginas = $count/$Registros_x_pagina;
     //Redondear el numero de paginas en case que de x.3
@@ -32,7 +32,7 @@
                 <th scope="col">Apellidos</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col" colspan="2">Acciones</th>
                 </tr>
             </thead>

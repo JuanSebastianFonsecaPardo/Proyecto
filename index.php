@@ -232,7 +232,7 @@
                         <li><a href='#Ventajas'>Ventajas</a></li>
                         <li><a href='#Funcionalidad'>Funcionalidades</a></li>
                         <li><a href='#Contacto'>Contacto</a></li>
-                        <li><a href='".urlsite."?page=Login' class='ctn'>Iniciar Sesíon</a></li>
+                        <li><a href='".urlsite."?page=Login' class='ctn'>Iniciar Sesión</a></li>
                     </ul>
                 </nav>
                 <header>
@@ -240,7 +240,7 @@
                         <h2>PIVOOT</h2>
                         <div class='line'></div>
                         <h1>SISTEMA PARA LA TOMA DE ASISTENCIAS</h1>
-                        <a href='#Nosotros' class='ctn'>INFORMACION</a>
+                        <a href='#Nosotros' class='ctn'>INFORMACIÓN</a>
                     </div>
                 </header>
                 <!-- NOSOTROS -->
@@ -249,7 +249,7 @@
                         <div class='col content-col'>
                             <h1>PIVOOT</h1>
                             <div class='line'></div>
-                            <p>PIVOOT es un sistema en la capacidad de generar usuarios como lo son empleados y aprendices, asignandoles una categoria a trabajar o para los entrenamientos.Igualmente llevando a cabo una funcíon de toma de asistencias para sus aprendices.</p>
+                            <p>PIVOOT es un sistema en la capacidad de generar usuarios como lo son empleados y estudiantes, asignandoles una categoria a trabajar o para los entrenamientos.Igualmente llevando a cabo una función de toma de asistencias para sus aprendices.</p>
                             <a href='#' class='ctn'>CONSEGUIR</a>
                         </div>
                         <div class='col image-col'>
@@ -272,7 +272,7 @@
                             En pivoot tenemos los modulos de:<br>
                             🏀 Asistencia. <br>
                             🏀 Registro de usuarios. <br>
-                            🏀 Categorias. <br>
+                            🏀 Categorías. <br>
                         </P>
                         <a href='#' class='ctn'>CONSEGUIR</a>
                     </div>
@@ -290,7 +290,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>No mas papeleo</h3>
-                            <p>Ya no tendran que usar papel para la toma de Asistencia.</p>
+                            <p>Ya no tendran que usar papel para la toma de Asistencía.</p>
                             <a href='#'>CONSEGUIR</a>
                         </div>
                     </div>
@@ -299,8 +299,8 @@
                             <img src='Resources/Img/Inicio/Reloj.jpg'>
                         </figure>
                         <div class='contenido-card'>
-                            <h3>Informacíon en tiempo real</h3>
-                            <p>Toda la informacíon que se visualiza esta en tiempo real esto nos ahorrara tiempo en la busqueda de datos.</p>
+                            <h3>Información en tiempo real</h3>
+                            <p>Toda la información que se visualiza esta en tiempo real esto nos ahorrara tiempo en la busqueda de datos.</p>
                             <a href='#'>CONSEGUIR</a>
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>Evitar perdida de datos</h3>
-                            <p>No se volvera a perder informacion ya que esta se encontrara en una base de datos segura.</p>
+                            <p>No se volvera a perder información ya que esta se encontrara en una base de datos segura.</p>
                             <a href='#'>CONSEGUIR</a>
                         </div>
                     </div>
@@ -329,7 +329,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>EMPLEADOS</h3>
-                            <p>Se pueden crear empleados los cuales seran los encargados de registrar las aasistencias y registrar aprendices.</p>
+                            <p>Se pueden crear empleados los cuales seran los encargados de registrar las asistencias y registrar aprendices.</p>
                         </div>
                     </div>
                     <div class='card'>
@@ -338,7 +338,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>APRENDICES</h3>
-                            <p>Los aprendices estaran en una categoria la cual le permitira estar en eventos donde se tomara la asistencia.</p>
+                            <p>Los aprendices estaran en una categoria la cual le permitira estar en eventos donde se tomara la asistencía.</p>
                         </div>
                     </div>
                     <div class='card'>
@@ -375,8 +375,8 @@
                             <img src='Resources/Img/Inicio/Ingreso.jpg'>
                         </figure>
                         <div class='contenido-card'>
-                            <h3>INICIO DE SESÍON</h3>
-                            <p>Los empleados pueden iniciar sesíon al sistema para el control de la escuela.</p>
+                            <h3>INICIO DE SESIÓN</h3>
+                            <p>Los empleados pueden iniciar sesión al sistema para el control de la escuela.</p>
                         </div>
                     </div>
                     </div>
@@ -411,7 +411,7 @@
                         </div>
                         <div class='box'>
                             <h2>SOBRE NOSOTROS</h2>
-                            <p>PIVOOT es un sistema en la capacidad de generar usuarios como lo son empleados y aprendices, asignandoles una categoria a trabajar o para los entrenamientos.Igualmente llevando a cabo una funcíon de toma de asistencias para sus aprendices.</p>
+                            <p>PIVOOT es un sistema en la capacidad de generar usuarios como lo son empleados y estudiantes, asignandoles una categoria a trabajar o para los entrenamientos.Igualmente llevando a cabo una función de toma de asistencias para sus aprendices.</p>
                         </div>
                         <div class='box'>
                             <h2>SIGUENOS</h2>
