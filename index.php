@@ -329,7 +329,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>EMPLEADOS</h3>
-                            <p>Se pueden crear empleados los cuales seran los encargados de registrar las asistencias y registrar aprendices.</p>
+                            <p>Se pueden crear empleados los cuales seran los encargados de registrar las asistencias y registrar estudiantes.</p>
                         </div>
                     </div>
                     <div class='card'>
@@ -337,8 +337,8 @@
                             <img src='Resources/Img/Inicio/Aprendices.jpg'>
                         </figure>
                         <div class='contenido-card'>
-                            <h3>APRENDICES</h3>
-                            <p>Los aprendices estaran en una categoria la cual le permitira estar en eventos donde se tomara la asistencía.</p>
+                            <h3>ESTUDIANTES</h3>
+                            <p>Los estudiantes estaran en una categoria la cual le permitira estar en eventos donde se tomara la asistencía.</p>
                         </div>
                     </div>
                     <div class='card'>
@@ -347,7 +347,7 @@
                         </figure>
                         <div class='contenido-card'>
                             <h3>CATEGORIAS</h3>
-                            <p>La categoria es donde se almacenan los aprendices organizados.</p>
+                            <p>La categoria es donde se almacenan los estudiantes organizados.</p>
                         </div>
                     </div>
                     </div>

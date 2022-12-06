@@ -39,7 +39,7 @@
             }
         }
         //Leer
-        public function Read($tabla,$data, $condicion){
+        public function Read($tabla,$data){
              //Cantidad de registros por pagina
             $Registros_x_pagina = 5;
             //Limitar articulos por pagina
